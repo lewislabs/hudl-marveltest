@@ -1,0 +1,16 @@
+{
+    "hudl": {
+        "providers": {
+            "serilog": {
+                "logname": "hudl-speedtest",
+                "output": [
+                    "Console"
+                ]
+            }
+        },
+        "defaultLevel": "DEBUG",
+        "overrideLevels": {
+            "Hudl.Marvel.Bifrost.Location.InstanceFilters.BranchInstanceFilter": "Error"
+        }
+    }
+}

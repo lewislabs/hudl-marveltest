@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <DebugType>portable</DebugType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>Hudl.MarvelTest.Webapp</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Hudl.MarvelTest.Webapp</PackageId>
+    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet54;portable-net45+win8</PackageTargetFallback>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="App\**\*;node_modules\**\*" />
+    <EmbeddedResource Remove="App\**\*;node_modules\**\*" />
+    <None Update="Config\**\*;wwwroot\**\*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="App\**\*;node_modules\**\*">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <Content Update="App\**\*;node_modules\**\*">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Config\service\**">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Config\global\**">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hudl.MarvelTest\Hudl.MarvelTest.csproj" />
+    <ProjectReference Include="..\Hudl.MarvelTest.Client\Hudl.MarvelTest.Client.csproj" />
+    <ProjectReference Include="..\..\..\dotnet-platform\src\Hudl.Marvel.Platform\Hudl.Marvel.Platform.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <PackageReference Include="Hudl.Marvel.Platform" Version="[18.4.2, 19)" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Hudl.Marvel.Tools.DotnetMicroserviceCli" Version="5.4.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+{
+    "name": "hudl-marveltest-app",
+    "description": "basic app package.json file",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "node ./build.js"
+    },
+    "dependencies": {}
+}
